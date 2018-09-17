@@ -1,0 +1,15 @@
+{
+    "host": "product-server",
+    "proxy":{
+        "enable": false,
+        "server": "proxy-server",
+        "username": "username",
+        "password": "password"
+    },
+    "basic":{
+        "enable": false,
+        "username": "username",
+        "password": "password"
+    },
+    "ignoreHttpsErrors": false
+}

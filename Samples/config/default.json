@@ -1,0 +1,36 @@
+{
+    "windowSize":{
+        "width": 1000,
+        "height": 600
+    },
+    "windowPosition":{
+        "x": 20,
+        "y": 20
+    },
+    "headless": false,
+    "slowMo": 50,
+    "timeout": 0,
+    "log4js":{
+        "appenders": {
+            "info": {
+                "type": "file",
+                "filename": "./logs/info.log",
+                "pattern": "-yyyy-MM-dd",
+                "maxLogSize": 1048576,
+                "backups": 5
+            },
+            "console": {
+                "type": "console"
+            }
+        },
+        "categories":{
+            "default":{
+                "appenders":[
+                    "info",
+                    "console"
+                ],
+                "level": "ALL"
+            }
+        }
+    }
+}

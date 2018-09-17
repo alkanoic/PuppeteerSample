@@ -1,0 +1,15 @@
+{
+    "host": "dev-server",
+    "proxy":{
+        "enable": false,
+        "server": "proxy-server",
+        "username": "username",
+        "password": "password"
+    },
+    "basic":{
+        "enable": true,
+        "username": "username",
+        "password": "password"
+    },
+    "ignoreHttpsErrors": true
+}
