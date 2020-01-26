@@ -13,10 +13,10 @@ puppeteer.then(async browser => {
         await common.setConfig(page);
 
         await page.goto('https://www.google.co.jp/');
-        await page.type('#lst-ib', 'puppeteer');
+        await page.type('input[name="q"]', 'puppeteer');
         await common.screenshotAndLog(page, 'sample1-1.png');
 
-        page.click('.lsb');
+        page.click('input[name=btnK]');
         await page.waitForNavigation();
         await common.screenshotAndLog(page, 'sample1-2.png');
     }catch(err){

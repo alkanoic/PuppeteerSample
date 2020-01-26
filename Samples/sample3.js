@@ -14,13 +14,13 @@ puppeteer.then(async browser => {
         await common.setConfig(page);
 
         await page.goto('https://www.google.co.jp/');
-        await page.type('#lst-ib', 'google');
+        await page.type('input[name="q"]', 'google');
         await common.screenshotAndLog(page, 'sample3-1.png');
-    
-        page.click('.lsb');
+
+        page.click('input[name=btnK]');
         await page.waitForNavigation();
         await common.screenshotAndLog(page, 'sample3-2.png');
-    
+
         const links = await page.evaluate((selector) => {
             const dataList = [];
             const linkList = Array.from(document.querySelectorAll(selector));
@@ -29,11 +29,11 @@ puppeteer.then(async browser => {
             });
             return dataList;
         }, '.r > a');
-    
+
         common.writeLog(page, links);
         for(let i=0; i < links.length; i++){
             await page.goto(links[i].href);
-            await common.screenshotAndLog(page, `sample3-${i + 3}-${links[i].title}}].png`);
+            await common.screenshotAndLog(page, `sample3-${i + 3}.png`);
         }
     }catch(err){
         common.writeError(page, err);
